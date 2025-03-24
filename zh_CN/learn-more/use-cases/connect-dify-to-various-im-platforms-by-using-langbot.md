@@ -1,16 +1,12 @@
-# 使用LangBot将Dify接入QQ、微信、钉钉、飞书、Telegram、Discord等各种平台
+# 将 Dify 快速接入 QQ、微信、飞书、钉钉、Telegram、Discord 等平台
 
 ## 1. 概述
 
-QQ、微信、钉钉、飞书、TG、Slack等各种平台，接入机器人的方法统一，导致难以一键接入 Dify ，无法快速调用 Dify 的强大生态。而借助 [LangBot](https://github.com/RockChinQ/LangBot)，就可以快速实现了
+市面上有多种多样的 IM 平台，接入机器人的方法各不相同，使用难度也参差不齐，导致难以快速接入 Dify 等 LLMOps 平台，使用 Dify 的强大生态。而借助 [LangBot](https://github.com/RockChinQ/LangBot)，即可在短时间内将 Dify 接入到 QQ、微信、飞书、钉钉、Telegram、Discord 等平台提供服务。同时，LangBot 还提供扩展机制和丰富的生态，能更加灵活地满足需求。
 
 ## 2. 部署 LangBot
 
-### 2.1. LangBot 简介
-
-丰富生态、支持扩展、多模态 - 大模型原生即时通信机器人平台 | 适配 QQ / 微信（企业微信、个人微信）/ 飞书 / 钉钉 / Discord / Telegram 等消息平台 | 支持 ChatGPT、DeepSeek、Dify、Claude、Gemini、xAI Grok、Ollama、LM Studio、阿里云百炼、火山方舟、SiliconFlow、Qwen、Moonshot、ChatGLM、SillyTraven、MCP 等 LLM 的机器人 / Agent。详细请看 Github 仓库：[LangBot](https://github.com/RockChinQ/LangBot)
-
-### 2.2. 部署 LangBot
+### 2.1. 部署 LangBot
 
 有三种方式：
 
@@ -18,7 +14,7 @@ QQ、微信、钉钉、飞书、TG、Slack等各种平台，接入机器人的�
 2. 手动部署：[对应链接](https://docs.langbot.app/deploy/langbot/one-click/bt.html)
 3. 使用宝塔面板部署：[对应链接](https://docs.langbot.app/deploy/langbot/manual.html)
 
-### 2.3. 对接消息平台
+### 2.2. 对接消息平台
 
 参考[此页面](https://docs.langbot.app/deploy/platforms/readme.html)，选择你要用的消息平台，如 QQ、微信、飞书、钉钉、Telegram、Discord等
 
@@ -29,7 +25,7 @@ QQ、微信、钉钉、飞书、TG、Slack等各种平台，接入机器人的�
 设置其中的`runner`为`dify-service-api`
 
 ```json
-"runner": "local-agent",
+"runner": "dify-service-api",
 ```
 
 相应的，配置`dify-service-api`
@@ -57,18 +53,11 @@ QQ、微信、钉钉、飞书、TG、Slack等各种平台，接入机器人的�
     }
 ```
 
-
-
-
-**仅在 `runner` 设置为 `dify-service-api` 时使用，需要配置以下内容：**
-
 - `base-url`：Dify Service API 的地址，默认是 `https://api.dify.ai/v1`，这是 Dify 官方云服务的地址，如果你使用的是自部署的社区版，请设置为你的自部署地址。
 
 - `app-type`：使用的 Dify 应用类型。支持 `chat` - 聊天助手（含 Chatflow）、 `agent` - Agent、 `workflow` - 工作流；请填写下方对应的应用类型 API 参数
 
-- 
-  options特殊的选项配置。
-  
+- `options`：特殊的选项配置。
   - `convert-thinking-tips`：dify 使用 deepseek-r1 等有思维链的模型时[会携带思考过程回复](https://github.com/RockChinQ/LangBot/issues/1108)，此选项控制输出时的处理方式；值为 original 时，不转换思考提示；值为 plain 时，将思考提示转换为类似 DeepSeek 官方的<think>...</think>格式；值为 remove 时，删除思考提示
   
 - 
