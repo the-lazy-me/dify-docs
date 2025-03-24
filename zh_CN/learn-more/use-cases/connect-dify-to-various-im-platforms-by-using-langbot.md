@@ -96,3 +96,13 @@
 
 使用 工作流 应用或 Agent 应用时，如果开启了`platform.json`中的`track-function-calls`，将会在 Dify 执行每个工具调用时，输出一个`调用函数xxx`的消息给用户。
 但如果是使用`chat`应用下的`ChatFlow`（聊天助手->工作流编排），无论如何只会输出 Answer（直接回复）节点返回的文本。
+
+## 4. 效果展示
+
+> 下面仅为微信和飞书的，其他平台如 QQ、钉钉、Telegram 等平台均可接入
+
+<figure><img src="../../.gitbook/assets/dify-langbot-showcase-wechat.png
+ " alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/dify-langbot-showcase-feishu.png
+ " alt=""><figcaption></figcaption></figure>
