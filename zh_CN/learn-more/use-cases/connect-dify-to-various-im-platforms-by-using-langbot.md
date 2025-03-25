@@ -106,3 +106,7 @@
 
 <figure><img src="../../.gitbook/assets/dify-langbot-showcase-feishu.png
  " alt=""><figcaption></figcaption></figure>
+
+## 5. 总结
+
+本文介绍了如何将 Dify 快速接入多个即时通讯平台，包括 QQ、微信、飞书、钉钉、Telegram 和 Discord。通过部署 LangBot，并配置`config/provider.json`等文件（具体请看原文文档），用户可以轻松实现与 Dify 的集成。文档提供了多种部署方式的详细步骤和配置示例，帮助用户快速上手。总之，本文档旨在通过部署LangBot，帮助用户充分利用 Dify 的强大功能，实现高效的跨平台通讯集成。
